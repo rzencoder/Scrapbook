@@ -1,0 +1,493 @@
+@import url(fonts/font.css);
+/* line 4, partials/_navbar.scss */
+.title {
+  position: relative;
+  font-family: "Pacifico", sans-serif;
+  background: #fafafa;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 100;
+  margin: -20px 0 0 0;
+  padding: 5px;
+}
+@media (max-width: 500px) {
+  /* line 4, partials/_navbar.scss */
+  .title {
+    font-size: 2rem;
+    padding: 10px;
+    text-align: left;
+  }
+}
+@media (max-width: 330px) {
+  /* line 4, partials/_navbar.scss */
+  .title {
+    font-size: 1.8rem;
+  }
+}
+/* line 21, partials/_navbar.scss */
+.title a {
+  color: #d06949;
+  position: relative;
+  z-index: 3;
+}
+/* line 25, partials/_navbar.scss */
+.title a:focus {
+  outline: 0;
+}
+
+/* line 31, partials/_navbar.scss */
+.title-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #b8d4df;
+  width: 100%;
+  height: 1rem;
+}
+
+/* line 40, partials/_navbar.scss */
+.logo {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* line 45, partials/_navbar.scss */
+.logo.twitter {
+  position: absolute;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 8px;
+  font-weight: 700;
+  font-family: Helvetica;
+  top: 40px;
+  right: 10px;
+  color: #fafafa;
+  background: #00aced;
+}
+/* line 56, partials/_navbar.scss */
+.logo.twitter:hover {
+  background: #0087ba;
+}
+@media (max-width: 500px) {
+  /* line 45, partials/_navbar.scss */
+  .logo.twitter {
+    padding: 6px;
+    font-size: 0.9rem;
+    top: 28px;
+    right: 5px;
+  }
+}
+
+/* line 70, partials/_navbar.scss */
+.twitter.logo.profile-btn {
+  position: absolute;
+  background: #fafafa;
+  color: #393939;
+  display: flex;
+  align-items: center;
+  top: 30px;
+  right: 10px;
+  border: none;
+}
+@media (max-width: 500px) {
+  /* line 70, partials/_navbar.scss */
+  .twitter.logo.profile-btn {
+    top: 25px;
+    right: 10px;
+    padding: 0;
+    margin: 0;
+  }
+}
+@media (max-width: 340px) {
+  /* line 70, partials/_navbar.scss */
+  .twitter.logo.profile-btn {
+    top: 21px;
+  }
+}
+/* line 88, partials/_navbar.scss */
+.twitter.logo.profile-btn button {
+  border: none;
+}
+
+/* line 93, partials/_navbar.scss */
+.profile-btn {
+  color: #393939;
+}
+/* line 95, partials/_navbar.scss */
+.profile-btn:hover {
+  color: #5f5f5f;
+}
+
+/* line 100, partials/_navbar.scss */
+.github {
+  top: 35px;
+  left: 15px;
+  font-size: 2.4rem;
+}
+/* line 104, partials/_navbar.scss */
+.github:hover {
+  color: #5f5f5f;
+}
+@media (max-width: 500px) {
+  /* line 100, partials/_navbar.scss */
+  .github {
+    display: none;
+  }
+}
+
+/*General Styles*/
+/* line 7, style.scss */
+html {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+/* line 12, style.scss */
+body {
+  background: #b8d4df;
+  font-family: "Bazar Medium", sans-serif;
+  color: #393939;
+  margin: 0;
+}
+
+/* line 19, style.scss */
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* line 24, style.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 28, style.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 32, style.scss */
+h2 {
+  font-size: 2rem;
+}
+
+/* line 36, style.scss */
+input {
+  border: none;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+
+/* Buttons */
+/* line 44, style.scss */
+.control-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #a8aec2;
+}
+
+/* line 51, style.scss */
+button, .button, .btn {
+  font-family: "Bazar Medium", sans-serif;
+  border: 2px solid white;
+  background: none;
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fafafa;
+  transition: all 0.2s;
+  box-sizing: padding-box;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* line 68, style.scss */
+.btn-add {
+  background: #393939;
+  margin-left: 10px;
+  padding: 6px;
+}
+/* line 72, style.scss */
+.btn-add:hover, .btn-add:focus {
+  border-color: #393939;
+  outline: 0;
+}
+@media (max-width: 750px) {
+  /* line 68, style.scss */
+  .btn-add {
+    margin: 10px 0 0 0;
+  }
+}
+
+/* line 81, style.scss */
+.btn-submit {
+  background: #d06949;
+  font-size: 1.4rem;
+  padding: 7px;
+}
+/* line 85, style.scss */
+.btn-submit:hover, .btn-submit:focus {
+  border-color: #d06949;
+  outline: 0;
+}
+
+/*Photos and Photo Grid*/
+/* line 93, style.scss */
+.user-posts-title {
+  text-align: center;
+}
+@media (max-width: 500px) {
+  /* line 93, style.scss */
+  .user-posts-title {
+    font-size: 1.5rem;
+    margin: 10px;
+  }
+}
+
+/* line 101, style.scss */
+.grid-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* line 106, style.scss */
+.grid {
+  position: relative;
+  margin: 20px auto;
+}
+
+/* line 111, style.scss */
+.grid-item {
+  width: 300px;
+  background: #fafafa;
+  margin: 0 0 30px;
+}
+@media (max-width: 330px) {
+  /* line 111, style.scss */
+  .grid-item {
+    width: 270px;
+    margin: 0 auto 30px;
+  }
+}
+
+/* line 121, style.scss */
+.grid-image {
+  width: 90%;
+  background: #fafafa;
+  margin: 0 auto;
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 130, style.scss */
+.image-details {
+  background: #fafafa;
+}
+
+/* line 134, style.scss */
+.photo-title {
+  padding: 10px;
+  text-align: center;
+  font-family: "Pacifico", sans-serif;
+}
+
+/* line 140, style.scss */
+.photo-username {
+  margin: 0 10px 0 0;
+  color: #a8aec2;
+}
+/* line 143, style.scss */
+.photo-username:hover {
+  color: #6c7698;
+}
+
+/* line 148, style.scss */
+.photo-username-active {
+  color: #d06949;
+}
+/* line 150, style.scss */
+.photo-username-active:hover {
+  color: #a3472a;
+}
+
+/* line 155, style.scss */
+.delete-btn {
+  font-size: 1.25rem;
+  padding-top: 7px;
+  cursor: pointer;
+}
+/* line 159, style.scss */
+.delete-btn:hover {
+  color: #6c7698;
+}
+
+/* line 164, style.scss */
+.likes {
+  color: #a8aec2;
+  font-family: "Pacifico", sans-serif;
+  margin: 0 0 0 5px;
+  padding: 0;
+}
+/* line 169, style.scss */
+.likes:hover {
+  color: #6c7698;
+}
+
+/* line 174, style.scss */
+.likes-heart {
+  background: url("img/heart.png") center no-repeat;
+  background-size: contain;
+  font-family: "Pacifico", sans-serif;
+  display: block;
+  font-size: 2rem;
+  padding: 1rem;
+  position: absolute;
+  color: #fafafa;
+  left: 50%;
+  top: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.5s;
+  transform: translateX(-50%) translateY(-50%) scale(3);
+}
+/* line 189, style.scss */
+.likes-heart.like-enter {
+  transition: all .2s;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+  opacity: 1;
+}
+/* line 193, style.scss */
+.likes-heart.like-enter.like-enter-active {
+  transform: translateX(-50%) translateY(-50%) scale(3);
+}
+/* line 197, style.scss */
+.likes-heart .like-leave-active {
+  display: none;
+}
+
+/* line 202, style.scss */
+.add-photo-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 750px) {
+  /* line 202, style.scss */
+  .add-photo-container {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* line 214, style.scss */
+.add-photo-form {
+  width: 60%;
+}
+@media (max-width: 750px) {
+  /* line 214, style.scss */
+  .add-photo-form {
+    width: 100%;
+  }
+}
+@media (max-width: 350px) {
+  /* line 219, style.scss */
+  .add-photo-form input {
+    width: 90%;
+  }
+}
+
+/* line 226, style.scss */
+.preview-container {
+  width: 40%;
+  margin: 0 auto;
+}
+@media (max-width: 750px) {
+  /* line 226, style.scss */
+  .preview-container {
+    width: 100%;
+  }
+}
+/* line 232, style.scss */
+.preview-container h2 {
+  text-align: center;
+}
+@media (max-width: 750px) {
+  /* line 232, style.scss */
+  .preview-container h2 {
+    text-align: left;
+  }
+}
+/* line 238, style.scss */
+.preview-container .grid-item {
+  margin: 0 auto;
+}
+@media (max-width: 750px) {
+  /* line 238, style.scss */
+  .preview-container .grid-item {
+    margin: 0;
+  }
+}
+
+/* line 246, style.scss */
+.submit-btn-container {
+  position: relative;
+  width: 80%;
+  margin: 0px auto 30px;
+}
+@media (max-width: 750px) {
+  /* line 246, style.scss */
+  .submit-btn-container {
+    width: 90%;
+  }
+}
+
+/* line 255, style.scss */
+.btn-submit {
+  position: absolute;
+}
+@media (max-width: 750px) {
+  /* line 255, style.scss */
+  .btn-submit {
+    top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/*Profile Button*/
+/* line 265, style.scss */
+.profile-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* line 270, style.scss */
+.profile-page-btn {
+  display: block;
+  margin: 20px;
+  font-size: 1.5rem;
+  padding: 10px;
+  background: #393939;
+  color: #fafafa;
+}
+/* line 277, style.scss */
+.profile-page-btn:hover {
+  border: 2px solid #393939;
+}
+
+/* line 282, style.scss */
+.logout-btn {
+  background: #d06949;
+  margin: 20px;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+/* line 287, style.scss */
+.logout-btn:hover {
+  border: 2px solid #d06949;
+}
