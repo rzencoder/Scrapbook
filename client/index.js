@@ -10,6 +10,7 @@ import AddPost from './components/AddPost';
 import PostContainer from './components/PostContainer';
 import UserPosts from './components/UserPosts';
 import Profile from './components/Profile';
+import NotFound from './components/NotFound';
 
 // import react router deps
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
@@ -24,6 +25,7 @@ const Routes = (
         <Route path="/profile" component={Profile}></Route>
         <Route path="/newpost" component={AddPost}></Route>
         <Route path="/posts/:currentUser" component={UserPosts}></Route>
+        <Route path="*" component={NotFound}></Route>
       </Route>
     </Router>
   </Provider>

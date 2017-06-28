@@ -3,6 +3,7 @@ import placeholder from '../styles/img/placeholder.png';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { addPost } from '../actions/posts'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 function mapStateToProps(state) {
   return { user: state.user };
@@ -23,6 +24,12 @@ class AddPost extends Component {
     this.onSubmitImage = this.onSubmitImage.bind(this);
     this.onSubmitPost = this.onSubmitPost.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
+  }
+
+  componentWillMount () {
+    if(!this.props.user.isAuthenticated){
+      browserHistory.push('/')
+    }
   }
 
   onSubmitImage (e) {

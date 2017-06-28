@@ -491,3 +491,10 @@ button, .button, .btn {
 .logout-btn:hover {
   border: 2px solid #d06949;
 }
+
+/* line 292, style.scss */
+.notfound {
+  width: 80%;
+  margin: 50px auto;
+  font-family: sans-serif;
+}
