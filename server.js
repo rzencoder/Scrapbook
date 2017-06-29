@@ -1,3 +1,4 @@
+//requirements
 require('dotenv').load();
 const express = require('express');
 const path = require('path');
@@ -18,23 +19,23 @@ const compiler = webpack(config);
 
 mongoose.connect(process.env.MONGO_URI);
 
-passport.serializeUser( function(user, done) {
+passport.serializeUser(function(user, done) {
   done(null, user);
 });
 
-passport.deserializeUser( function(obj, done) {
+passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-	extended: true
+  extended: true
 }));
 app.use((expressSession)({
-	secret: process.env.SESSION_SECRET,
-	resave: false,
-	saveUninitialized: false
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
 }));
 
 app.use(passport.initialize());
@@ -54,11 +55,11 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(7770, 'localhost', function(err) {
+app.listen(process.env.PORT, 'localhost', function(err) {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('Listening at http://localhost:7770');
+  console.log('Listening at ' + process.env.ADDRESS + process.env.PORT);
 });

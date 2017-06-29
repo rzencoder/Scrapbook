@@ -2,6 +2,8 @@ import axios from 'axios';
 import { browserHistory } from 'react-router';
 import { getAllPosts } from './posts';
 
+const path = 'http://127.0.0.1:3000';
+
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const LOGOUT = 'LOGOUT';
@@ -25,7 +27,7 @@ function loginError(error) {
 
 export function checkAuth() {
   return dispatch => {
-    return axios.post('http://127.0.0.1:7770/auth/verify').then ( res => {
+    return axios.post(path + '/auth/verify').then ( res => {
         const user = res.data
         dispatch(receiveLogin(user));
         dispatch(getAllPosts());
@@ -47,7 +49,7 @@ function logoutUser() {
 
 export function logout() {
   return dispatch => {
-    return axios.get('http://127.0.0.1:7770/logout').then( res => {
+    return axios.get(path + '/logout').then( res => {
       dispatch(logoutUser());
       browserHistory.push('/');
     }).catch(err => {

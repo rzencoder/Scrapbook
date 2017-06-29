@@ -1,3 +1,4 @@
+//requirements
 require('dotenv').load();
 const express = require('express');
 const passport = require('passport');
@@ -12,7 +13,7 @@ passport.use(new GitHubStrategy({
     callbackURL: process.env.CALLBACK_URL
   },
   (accessToken, refreshToken, profile, done) => {
-    process.nextTick( () => {
+    process.nextTick(() => {
       User.findOne({
         'username': profile.username
       }, (err, user) => {
@@ -24,7 +25,7 @@ passport.use(new GitHubStrategy({
         } else {
           var newUser = new User();
           newUser.username = profile.username;
-          newUser.save( err => {
+          newUser.save(err => {
             if (err) {
               throw err;
             }
@@ -39,9 +40,11 @@ passport.use(new GitHubStrategy({
 app.get('/auth/github', passport.authenticate('github'));
 
 app.get('/auth/github/callback/',
-  passport.authenticate('github', { failureRedirect: '/' }), (req, res) => {
+  passport.authenticate('github', {
+    failureRedirect: '/'
+  }), (req, res) => {
     res.redirect('/profile');
-});
+  });
 
 app.post('/auth/verify', (req, res) => {
   if (req.isAuthenticated()) {
@@ -49,11 +52,11 @@ app.post('/auth/verify', (req, res) => {
       username: req.user.username
     });
   } else {
-      res.status(403).send({
-        error: "Not Authorized"
-      })
-    }
- });
+    res.status(403).send({
+      error: "Not Authorized"
+    })
+  }
+});
 
 app.get('/logout', (req, res) => {
   req.logout();
