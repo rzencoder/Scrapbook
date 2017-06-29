@@ -18,7 +18,11 @@ var Post = new Schema({
 		likes: {
 								type : Number,
 								default: 0
-						}
+						},
+		likeList: {
+								type: Array,
+								default: []
+		}
 });
 
 module.exports = mongoose.model('Post', Post);

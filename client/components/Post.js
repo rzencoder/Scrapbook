@@ -23,20 +23,28 @@ class Post extends Component {
     this.removePost = this.removePost.bind(this);
     this.addLike = this.addLike.bind(this);
   }
+  componentWillMount () {
+    this.setState({
+      rand: Math.random()
+    })
+  }
 
   removePost () {
     this.props.removePost({"id": this.props.post._id});
   }
 
   addLike () {
-    this.props.addLike({"id": this.props.post._id});
+    if (!this.props.post.likeList.includes(this.props.user.username)) {
+      this.props.addLike({"id": this.props.post._id,
+                          "username": this.props.user.username });
+    }
   }
 
   render() {
-    const { post, i, comments } = this.props;
+    const { post, isAuthenticated } = this.props;
     const userMatch = this.props.user.username === post.username;
-    const sign = this.state.rand > 0.5 ? '' : '-';
-    const style = {transform: `rotate(${sign}${this.state.rand * 2}deg)`}
+    const sign = Math.random() > 0.5 ? '' : '-';
+    const style = {transform: `rotate(${sign}${Math.random() * 2}deg)`}
     return (
       <figure className="grid-item" style={style}>
         <div className="grid-image">
@@ -55,7 +63,7 @@ class Post extends Component {
           <p className="photo-title">{post.title}</p>
           <div className="control-buttons">
             <button  onClick={this.addLike} className="likes">&hearts; {post.likes}</button>
-            {this.props.user.isAuthenticated &&
+            {isAuthenticated &&
               userMatch ? <div className="delete-btn" onClick={this.removePost}><i className="fa fa-trash"></i></div> : ''}
             <Link className={`photo-username ${userMatch ? 'photo-username-active' : ''}`} to={`/posts/${post.username}`}>{post.username}</Link>
           </div>

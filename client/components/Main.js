@@ -23,9 +23,6 @@ function mapDispatchToProps(dispatch) {
 
 class Main extends Component {
 
-  componentWillMount () {
-    this.props.loadPosts() ;
-  }
 
   render () {
     const isAuthenticated = this.props.user.isAuthenticated;

@@ -6,7 +6,7 @@ import Post from './Post';
 import Masonry from 'react-masonry-component';
 
 const masonryOptions = {
-    transitionDuration: 0,
+    transitionDuration: '0.3s',
     isFitWidth: true,
     gutter: 30
 };

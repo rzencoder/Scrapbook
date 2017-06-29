@@ -39,14 +39,23 @@ app.post('/api/remove-post', (req, res) => {
 });
 
 app.post('/api/add-like', (req, res) => {
-	const { id } = req.body;
+	const { id, username } = req.body;
 	if (req.isAuthenticated()) {
-		Post.findByIdAndUpdate(id, {$inc: {likes: 1}}, err => {
+		Post.findById(id, (err, post) => {
 			if (err) {
 				throw err;
 			}
+			else if (!post.likeList.includes(username)) {
+				post.likes += 1;
+				post.likeList.push(username);
+				post.save(err => {
+					if (err) throw err;
+					res.status(201).send('Added Like');
+				})
+			} else {
+					res.status(401).send("You've already liked this post")
+				}
 		});
-		res.status(201).send('Added Like');
 	} else {
 			res.status(401).send('Login Required')
 		}
