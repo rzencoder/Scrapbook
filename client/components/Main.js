@@ -1,28 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { getAllPosts } from '../actions/posts'
-import { logout } from '../actions/auth';
-import Masonry from 'react-masonry-component';
-
-const masonryOptions = {
-    transitionDuration: 0,
-    isFitWidth: true,
-    gutter: 30
-};
+import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
-  return { user: state.user,
-           posts: state.posts };
-}
-
-function mapDispatchToProps(dispatch) {
-  return { loadPosts: bindActionCreators(getAllPosts, dispatch) };
+  return { user: state.user };
 }
 
 class Main extends Component {
-
 
   render () {
     const isAuthenticated = this.props.user.isAuthenticated;
@@ -44,4 +28,4 @@ class Main extends Component {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps)(Main);

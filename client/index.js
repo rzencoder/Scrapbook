@@ -1,10 +1,13 @@
+// react, redux, router
 import React from 'react';
 import { render } from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
 
-// Import css
+//css
 import css from './styles/style.css';
 
-// Import Components
+// components
 import Main from './components/Main';
 import AddPost from './components/AddPost';
 import PostContainer from './components/PostContainer';
@@ -12,10 +15,9 @@ import UserPosts from './components/UserPosts';
 import Profile from './components/Profile';
 import NotFound from './components/NotFound';
 
-// import react router deps
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { Provider } from 'react-redux';
+//store
 import store, { history } from './store';
+
 
 const Routes = (
   <Provider store={store}>

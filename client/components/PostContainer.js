@@ -13,7 +13,7 @@ const masonryOptions = {
 
 function mapStateToProps(state) {
   return { user: state.user,
-          posts: state.posts };
+           posts: state.posts };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -31,11 +31,11 @@ class PostContainer extends Component {
     return (
       <div className="grid-container">
         <Masonry
-              className={'grid'} // default ''
-              elementType={'div'} // default 'div'
-              options={masonryOptions} // default {}
-              disableImagesLoaded={false} // default false
-              updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+              className={'grid'}
+              elementType={'div'}
+              options={masonryOptions}
+              disableImagesLoaded={false}
+              updateOnEachImageLoad={false}
         >
           {this.props.posts.map((post, i) => <Post {...this.props} key={i} i={i} post={post} />)}
         </Masonry>

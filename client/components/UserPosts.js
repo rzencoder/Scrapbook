@@ -33,11 +33,11 @@ class UserPosts extends Component {
       <div className="grid-container">
         <h2 className="user-posts-title">{`${this.props.params.currentUser}'s posts`}</h2>
         <Masonry
-              className={'grid'} // default ''
-              elementType={'div'} // default 'div'
-              options={masonryOptions} // default {}
-              disableImagesLoaded={false} // default false
-              updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+              className={'grid'}
+              elementType={'div'}
+              options={masonryOptions}
+              disableImagesLoaded={false}
+              updateOnEachImageLoad={false}
         >
           {posts.map((post, i) => <Post {...this.props} key={i} i={i} post={post} />)}
         </Masonry>

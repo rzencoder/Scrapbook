@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import placeholder from '../styles/img/placeholder.png';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { addPost } from '../actions/posts'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { addPost } from '../actions/posts'
+import placeholder from '../styles/img/placeholder.png';
 
 function mapStateToProps(state) {
   return { user: state.user };
@@ -81,7 +81,7 @@ class AddPost extends Component {
               </div>
               <figcaption className="image-details">
                 <p className="photo-title">{this.state.newTitle}</p>
-                <div className="control-buttons">
+                <div>
                   <button  className="likes">&hearts; 0</button>
                   <div className="photo-username">{this.props.user.username}</div>
                 </div>

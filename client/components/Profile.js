@@ -32,7 +32,7 @@ class Profile extends Component {
           <div>
             <h2>Welcome {this.props.user.username}</h2>
             <Link to={`/posts/${this.props.user.username}`}><button className="your-posts-btn profile-page-btn">Your Posts</button></Link>
-            <Link to="/newpost"><button className="add-post-btn profile-page-btn">Add Photo</button></Link>
+            <Link to="/newpost"><button className="add-post-btn profile-page-btn">Add Post</button></Link>
             <a><button className="logout-btn profile-page-btn" className="logout-btn" onClick={this.props.logout}>Logout</button></a>
           </div> : ''}
       </div>
