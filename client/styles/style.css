@@ -1,25 +1,26 @@
 @import url(fonts/font.css);
-/* line 4, partials/_navbar.scss */
+/* line 3, partials/_navbar.scss */
 .title {
   position: relative;
+  line-height: 1.5;
   font-family: "Pacifico", sans-serif;
   background: #fafafa;
   text-align: center;
   font-size: 3rem;
   font-weight: 100;
   margin: -20px 0 0 0;
-  padding: 5px;
+  padding: 10px;
 }
 @media (max-width: 500px) {
-  /* line 4, partials/_navbar.scss */
+  /* line 3, partials/_navbar.scss */
   .title {
     font-size: 2rem;
-    padding: 10px;
+    padding: 10px 10px 12px;
     text-align: left;
   }
 }
 @media (max-width: 330px) {
-  /* line 4, partials/_navbar.scss */
+  /* line 3, partials/_navbar.scss */
   .title {
     font-size: 1.8rem;
   }
@@ -56,10 +57,10 @@
   position: absolute;
   font-size: 1rem;
   border-radius: 5px;
-  padding: 8px;
+  padding: 6px;
   font-weight: 700;
   font-family: Helvetica;
-  top: 40px;
+  top: 32px;
   right: 10px;
   color: #fafafa;
   background: #00aced;
@@ -71,14 +72,14 @@
 @media (max-width: 500px) {
   /* line 45, partials/_navbar.scss */
   .logo.twitter {
-    padding: 6px;
+    padding: 2px 4px;
     font-size: 0.9rem;
-    top: 28px;
+    top: 25px;
     right: 5px;
   }
 }
 
-/* line 70, partials/_navbar.scss */
+/* line 67, partials/_navbar.scss */
 .twitter.logo.profile-btn {
   position: absolute;
   background: #fafafa;
@@ -90,7 +91,7 @@
   border: none;
 }
 @media (max-width: 500px) {
-  /* line 70, partials/_navbar.scss */
+  /* line 67, partials/_navbar.scss */
   .twitter.logo.profile-btn {
     top: 25px;
     right: 10px;
@@ -99,40 +100,517 @@
   }
 }
 @media (max-width: 340px) {
-  /* line 70, partials/_navbar.scss */
+  /* line 67, partials/_navbar.scss */
   .twitter.logo.profile-btn {
     top: 21px;
   }
 }
-/* line 88, partials/_navbar.scss */
+/* line 85, partials/_navbar.scss */
 .twitter.logo.profile-btn button {
   border: none;
 }
 
-/* line 93, partials/_navbar.scss */
+/* line 90, partials/_navbar.scss */
 .profile-btn {
   color: #393939;
 }
-/* line 95, partials/_navbar.scss */
+/* line 92, partials/_navbar.scss */
 .profile-btn:hover {
   color: #5f5f5f;
 }
 
-/* line 100, partials/_navbar.scss */
+/* line 97, partials/_navbar.scss */
 .github {
-  top: 35px;
+  top: 32px;
   left: 15px;
   font-size: 2.4rem;
 }
-/* line 104, partials/_navbar.scss */
+/* line 101, partials/_navbar.scss */
 .github:hover {
   color: #5f5f5f;
 }
 @media (max-width: 500px) {
-  /* line 100, partials/_navbar.scss */
+  /* line 97, partials/_navbar.scss */
   .github {
     display: none;
   }
+}
+
+/* normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* line 12, partials/_normalize.scss */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+/* line 25, partials/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 38, partials/_normalize.scss */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+/* line 47, partials/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+/* line 62, partials/_normalize.scss */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+/* line 70, partials/_normalize.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/* line 79, partials/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 90, partials/_normalize.scss */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+/* line 103, partials/_normalize.scss */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/* line 113, partials/_normalize.scss */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+/* line 124, partials/_normalize.scss */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+/* line 133, partials/_normalize.scss */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 144, partials/_normalize.scss */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+/* line 153, partials/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+/* line 161, partials/_normalize.scss */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+/* line 170, partials/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/* line 180, partials/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 187, partials/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 191, partials/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 203, partials/_normalize.scss */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+/* line 211, partials/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+/* line 220, partials/_normalize.scss */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+/* line 228, partials/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+/* line 244, partials/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+/* line 257, partials/_normalize.scss */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/* line 267, partials/_normalize.scss */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+/* line 280, partials/_normalize.scss */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+/* line 291, partials/_normalize.scss */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+/* line 303, partials/_normalize.scss */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+/* line 311, partials/_normalize.scss */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+/* line 322, partials/_normalize.scss */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/* line 336, partials/_normalize.scss */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+/* line 345, partials/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+/* line 355, partials/_normalize.scss */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/* line 365, partials/_normalize.scss */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/* line 374, partials/_normalize.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+/* line 384, partials/_normalize.scss */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+/* line 393, partials/_normalize.scss */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+/* line 407, partials/_normalize.scss */
+details,
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+/* line 415, partials/_normalize.scss */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 426, partials/_normalize.scss */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+/* line 434, partials/_normalize.scss */
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+/* line 445, partials/_normalize.scss */
+[hidden] {
+  display: none;
 }
 
 /*General Styles*/
@@ -204,76 +682,76 @@ button, .button, .btn {
   cursor: pointer;
 }
 
-/* line 68, style.scss */
+/* line 67, style.scss */
 .btn-add {
   background: #393939;
   margin-left: 10px;
   padding: 6px;
 }
-/* line 72, style.scss */
+/* line 71, style.scss */
 .btn-add:hover, .btn-add:focus {
   border-color: #393939;
   outline: 0;
 }
 @media (max-width: 750px) {
-  /* line 68, style.scss */
+  /* line 67, style.scss */
   .btn-add {
     margin: 10px 0 0 0;
   }
 }
 
-/* line 81, style.scss */
+/* line 80, style.scss */
 .btn-submit {
   background: #d06949;
   font-size: 1.4rem;
   padding: 7px;
 }
-/* line 85, style.scss */
+/* line 84, style.scss */
 .btn-submit:hover, .btn-submit:focus {
   border-color: #d06949;
   outline: 0;
 }
 
 /*Photos and Photo Grid*/
-/* line 93, style.scss */
+/* line 92, style.scss */
 .user-posts-title {
   text-align: center;
 }
 @media (max-width: 500px) {
-  /* line 93, style.scss */
+  /* line 92, style.scss */
   .user-posts-title {
     font-size: 1.5rem;
     margin: 10px;
   }
 }
 
-/* line 101, style.scss */
+/* line 100, style.scss */
 .grid-container {
   max-width: 1300px;
   margin: 0 auto;
 }
 
-/* line 106, style.scss */
+/* line 105, style.scss */
 .grid {
   position: relative;
   margin: 20px auto;
 }
 
-/* line 111, style.scss */
+/* line 110, style.scss */
 .grid-item {
   width: 300px;
   background: #fafafa;
   margin: 0 0 30px;
 }
 @media (max-width: 330px) {
-  /* line 111, style.scss */
+  /* line 110, style.scss */
   .grid-item {
     width: 270px;
     margin: 0 auto 30px;
   }
 }
 
-/* line 121, style.scss */
+/* line 120, style.scss */
 .grid-image {
   width: 90%;
   background: #fafafa;
@@ -283,61 +761,61 @@ button, .button, .btn {
   justify-content: center;
 }
 
-/* line 130, style.scss */
+/* line 129, style.scss */
 .image-details {
   background: #fafafa;
 }
 
-/* line 134, style.scss */
+/* line 133, style.scss */
 .photo-title {
   padding: 10px;
   text-align: center;
   font-family: "Pacifico", sans-serif;
 }
 
-/* line 140, style.scss */
+/* line 139, style.scss */
 .photo-username {
   margin: 0 10px 0 0;
   color: #a8aec2;
 }
-/* line 143, style.scss */
+/* line 142, style.scss */
 .photo-username:hover {
   color: #6c7698;
 }
 
-/* line 148, style.scss */
+/* line 147, style.scss */
 .photo-username-active {
   color: #d06949;
 }
-/* line 150, style.scss */
+/* line 149, style.scss */
 .photo-username-active:hover {
   color: #a3472a;
 }
 
-/* line 155, style.scss */
+/* line 154, style.scss */
 .delete-btn {
   font-size: 1.25rem;
   padding-top: 7px;
   cursor: pointer;
 }
-/* line 159, style.scss */
+/* line 158, style.scss */
 .delete-btn:hover {
   color: #6c7698;
 }
 
-/* line 164, style.scss */
+/* line 163, style.scss */
 .likes {
   color: #a8aec2;
   font-family: "Pacifico", sans-serif;
   margin: 0 0 0 5px;
   padding: 0;
 }
-/* line 169, style.scss */
+/* line 168, style.scss */
 .likes:hover {
   color: #6c7698;
 }
 
-/* line 174, style.scss */
+/* line 173, style.scss */
 .likes-heart {
   background: url("img/heart.png") center no-repeat;
   background-size: contain;
@@ -354,22 +832,22 @@ button, .button, .btn {
   transition: all 0.5s;
   transform: translateX(-50%) translateY(-50%) scale(3);
 }
-/* line 189, style.scss */
+/* line 188, style.scss */
 .likes-heart.like-enter {
   transition: all .2s;
   transform: translateX(-50%) translateY(-50%) scale(1);
   opacity: 1;
 }
-/* line 193, style.scss */
+/* line 192, style.scss */
 .likes-heart.like-enter.like-enter-active {
   transform: translateX(-50%) translateY(-50%) scale(3);
 }
-/* line 197, style.scss */
+/* line 196, style.scss */
 .likes-heart .like-leave-active {
   display: none;
 }
 
-/* line 202, style.scss */
+/* line 201, style.scss */
 .add-photo-container {
   width: 80%;
   margin: 0 auto;
@@ -377,7 +855,7 @@ button, .button, .btn {
   justify-content: space-between;
 }
 @media (max-width: 750px) {
-  /* line 202, style.scss */
+  /* line 201, style.scss */
   .add-photo-container {
     width: 90%;
     flex-direction: column;
@@ -385,74 +863,74 @@ button, .button, .btn {
   }
 }
 
-/* line 214, style.scss */
+/* line 213, style.scss */
 .add-photo-form {
   width: 60%;
 }
 @media (max-width: 750px) {
-  /* line 214, style.scss */
+  /* line 213, style.scss */
   .add-photo-form {
     width: 100%;
   }
 }
 @media (max-width: 350px) {
-  /* line 219, style.scss */
+  /* line 218, style.scss */
   .add-photo-form input {
     width: 90%;
   }
 }
 
-/* line 226, style.scss */
+/* line 225, style.scss */
 .preview-container {
   width: 40%;
   margin: 0 auto;
 }
 @media (max-width: 750px) {
-  /* line 226, style.scss */
+  /* line 225, style.scss */
   .preview-container {
     width: 100%;
   }
 }
-/* line 232, style.scss */
+/* line 231, style.scss */
 .preview-container h2 {
   text-align: center;
 }
 @media (max-width: 750px) {
-  /* line 232, style.scss */
+  /* line 231, style.scss */
   .preview-container h2 {
     text-align: left;
   }
 }
-/* line 238, style.scss */
+/* line 237, style.scss */
 .preview-container .grid-item {
   margin: 0 auto;
 }
 @media (max-width: 750px) {
-  /* line 238, style.scss */
+  /* line 237, style.scss */
   .preview-container .grid-item {
     margin: 0;
   }
 }
 
-/* line 246, style.scss */
+/* line 245, style.scss */
 .submit-btn-container {
   position: relative;
   width: 80%;
   margin: 0px auto 30px;
 }
 @media (max-width: 750px) {
-  /* line 246, style.scss */
+  /* line 245, style.scss */
   .submit-btn-container {
     width: 90%;
   }
 }
 
-/* line 255, style.scss */
+/* line 254, style.scss */
 .btn-submit {
   position: absolute;
 }
 @media (max-width: 750px) {
-  /* line 255, style.scss */
+  /* line 254, style.scss */
   .btn-submit {
     top: 20px;
     margin-bottom: 20px;
@@ -460,13 +938,13 @@ button, .button, .btn {
 }
 
 /*Profile Button*/
-/* line 265, style.scss */
+/* line 264, style.scss */
 .profile-container {
   width: 80%;
   margin: 0 auto;
 }
 
-/* line 270, style.scss */
+/* line 269, style.scss */
 .profile-page-btn {
   display: block;
   margin: 20px;
@@ -475,24 +953,24 @@ button, .button, .btn {
   background: #393939;
   color: #fafafa;
 }
-/* line 277, style.scss */
+/* line 276, style.scss */
 .profile-page-btn:hover {
   border: 2px solid #393939;
 }
 
-/* line 282, style.scss */
+/* line 281, style.scss */
 .logout-btn {
   background: #d06949;
   margin: 20px;
   font-size: 1.5rem;
   padding: 10px;
 }
-/* line 287, style.scss */
+/* line 286, style.scss */
 .logout-btn:hover {
   border: 2px solid #d06949;
 }
 
-/* line 292, style.scss */
+/* line 291, style.scss */
 .notfound {
   width: 80%;
   margin: 50px auto;

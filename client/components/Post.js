@@ -30,7 +30,8 @@ class Post extends Component {
   }
 
   removePost () {
-    this.props.removePost({"id": this.props.post._id});
+    this.props.removePost({"id": this.props.post._id,
+                           "username": this.props.user.username });
   }
 
   addLike () {
@@ -41,7 +42,7 @@ class Post extends Component {
   }
 
   render() {
-    const { post, isAuthenticated } = this.props;
+    const { post } = this.props;
     const userMatch = this.props.user.username === post.username;
     const sign = Math.random() > 0.5 ? '' : '-';
     const style = {transform: `rotate(${sign}${Math.random() * 2}deg)`}
@@ -63,7 +64,7 @@ class Post extends Component {
           <p className="photo-title">{post.title}</p>
           <div className="control-buttons">
             <button  onClick={this.addLike} className="likes">&hearts; {post.likes}</button>
-            {isAuthenticated &&
+            {this.props.user.isAuthenticated &&
               userMatch ? <div className="delete-btn" onClick={this.removePost}><i className="fa fa-trash"></i></div> : ''}
             <Link className={`photo-username ${userMatch ? 'photo-username-active' : ''}`} to={`/posts/${post.username}`}>{post.username}</Link>
           </div>

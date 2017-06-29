@@ -25,14 +25,22 @@ app.post('/api/add-post', (req, res) => {
 
 
 app.post('/api/remove-post', (req, res) => {
-	const { id } = req.body;
+	const { id, username } = req.body;
 	if (req.isAuthenticated()) {
-		Post.findByIdAndRemove(id, err => {
+		Post.findById(id, (err, post) => {
 			if (err) {
 				throw err
-			};
+			} else {
+					if (post.username === username) {
+						post.remove(err => {
+							if (err) throw err;
+							res.status(201).send('Post removed from db');
+						})
+					} else {
+							res.status(401).send('Unable to delete');
+					}
+				}
 		});
-		res.status(201).send('Post removed from db');
 	} else {
 			res.status(401).send('Login Required');
 		}
