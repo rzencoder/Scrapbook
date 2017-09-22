@@ -2,14 +2,14 @@
 require('dotenv').load();
 const express = require('express');
 const passport = require('passport');
-const GitHubStrategy = require('passport-github2');
+const TwitterStrategy = require('passport-twitter');
 const User = require('../models/users');
 
 const app = module.exports = express.Router();
 
-passport.use(new GitHubStrategy({
-    clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
+passport.use(new TwitterStrategy({
+    consumerKey: process.env.TWITTER_CONSUMER_KEY,
+    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
     callbackURL: process.env.CALLBACK_URL
   },
   (accessToken, refreshToken, profile, done) => {
@@ -37,10 +37,10 @@ passport.use(new GitHubStrategy({
   }
 ));
 
-app.get('/auth/github', passport.authenticate('github'));
+app.get('/auth/twitter', passport.authenticate('twitter'));
 
-app.get('/auth/github/callback/',
-  passport.authenticate('github', {
+app.get('/auth/twitter/callback/',
+  passport.authenticate('twitter', {
     failureRedirect: '/'
   }), (req, res) => {
     res.redirect('/profile');

@@ -63,7 +63,7 @@ class Post extends Component {
               <button  onClick={this.addLike} className="likes">&hearts; {post.likes}</button>
               {this.props.user.isAuthenticated &&
                 userMatch ? <div className="delete-btn" onClick={this.removePost}><i className="fa fa-trash"></i></div> : ''}
-              <Link className={`photo-username ${userMatch ? 'photo-username-active' : ''}`} to={`/posts/${post.username}`}>{post.username}</Link>
+              <Link className={`photo-username ${userMatch ? 'photo-username-active' : ''}`} to={`/posts/${post.username}`}>@{post.username}</Link>
             </div>
           </figcaption>
         </div>

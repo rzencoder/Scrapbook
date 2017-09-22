@@ -16,7 +16,7 @@ class Main extends Component {
           <Link to="/">Scrapbook</Link>
           <i className="fa fa-github github logo" aria-hidden="true"></i>
           {!isAuthenticated ?
-            <a href="/auth/github" className="logo twitter"><i className="fa fa-twitter" aria-hidden="true"></i> {`  Sign in`}</a>
+            <a href="/auth/twitter" className="logo twitter"><i className="fa fa-twitter" aria-hidden="true"></i> {`  Sign in`}</a>
             :
             <Link className="logo twitter profile-btn" to="/profile"><button className="profile-btn">Profile</button></Link>
              }

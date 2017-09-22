@@ -85,7 +85,7 @@ class AddPost extends Component {
                 <p className="photo-title">{this.state.newTitle}</p>
                 <div className="post-details">
                   <button  className="likes">&hearts; 0</button>
-                  <div className="photo-username">{this.props.user.username}</div>
+                  <div className="photo-username">@{this.props.user.username}</div>
                 </div>
               </figcaption>
             </figure>

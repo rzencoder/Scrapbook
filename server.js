@@ -8,7 +8,6 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressSession = require('express-session');
 const passport = require('passport');
-const GitHubStrategy = require('passport-github2').Strategy;
 const mongoose = require('mongoose');
 const User = require('./server/models/users');
 const apiRoutes = require('./server/routes/api');
@@ -17,7 +16,7 @@ const authRoutes = require('./server/routes/auth');
 const app = express();
 const compiler = webpack(config);
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/scrapbook");
 
 passport.serializeUser(function(user, done) {
   done(null, user);
