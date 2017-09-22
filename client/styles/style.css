@@ -15,7 +15,7 @@
   /* line 3, partials/_navbar.scss */
   .title {
     font-size: 2rem;
-    padding: 10px 10px 12px;
+    padding: 15px 10px;
     text-align: left;
   }
 }
@@ -60,7 +60,7 @@
   padding: 6px;
   font-weight: 700;
   font-family: Helvetica;
-  top: 32px;
+  top: 34px;
   right: 10px;
   color: #fafafa;
   background: #00aced;
@@ -74,12 +74,18 @@
   .logo.twitter {
     padding: 2px 4px;
     font-size: 0.9rem;
-    top: 25px;
+    top: 30px;
     right: 5px;
   }
 }
+@media (max-width: 340px) {
+  /* line 45, partials/_navbar.scss */
+  .logo.twitter {
+    top: 27px;
+  }
+}
 
-/* line 67, partials/_navbar.scss */
+/* line 70, partials/_navbar.scss */
 .twitter.logo.profile-btn {
   position: absolute;
   background: #fafafa;
@@ -91,7 +97,7 @@
   border: none;
 }
 @media (max-width: 500px) {
-  /* line 67, partials/_navbar.scss */
+  /* line 70, partials/_navbar.scss */
   .twitter.logo.profile-btn {
     top: 25px;
     right: 10px;
@@ -100,37 +106,37 @@
   }
 }
 @media (max-width: 340px) {
-  /* line 67, partials/_navbar.scss */
+  /* line 70, partials/_navbar.scss */
   .twitter.logo.profile-btn {
     top: 21px;
   }
 }
-/* line 85, partials/_navbar.scss */
+/* line 89, partials/_navbar.scss */
 .twitter.logo.profile-btn button {
   border: none;
 }
 
-/* line 90, partials/_navbar.scss */
+/* line 94, partials/_navbar.scss */
 .profile-btn {
   color: #393939;
 }
-/* line 92, partials/_navbar.scss */
+/* line 96, partials/_navbar.scss */
 .profile-btn:hover {
   color: #5f5f5f;
 }
 
-/* line 97, partials/_navbar.scss */
+/* line 101, partials/_navbar.scss */
 .github {
   top: 32px;
   left: 15px;
   font-size: 2.4rem;
 }
-/* line 101, partials/_navbar.scss */
+/* line 105, partials/_navbar.scss */
 .github:hover {
   color: #5f5f5f;
 }
 @media (max-width: 500px) {
-  /* line 97, partials/_navbar.scss */
+  /* line 101, partials/_navbar.scss */
   .github {
     display: none;
   }
@@ -738,20 +744,32 @@ button, .button, .btn {
 }
 
 /* line 110, style.scss */
-.grid-item {
+.grid-figure {
   width: 300px;
-  background: #fafafa;
   margin: 0 0 30px;
 }
 @media (max-width: 330px) {
   /* line 110, style.scss */
+  .grid-figure {
+    width: 270px;
+    margin: 0 auto 30px;
+  }
+}
+
+/* line 119, style.scss */
+.grid-item {
+  width: 300px;
+  background: #fafafa;
+}
+@media (max-width: 330px) {
+  /* line 119, style.scss */
   .grid-item {
     width: 270px;
     margin: 0 auto 30px;
   }
 }
 
-/* line 120, style.scss */
+/* line 128, style.scss */
 .grid-image {
   width: 90%;
   background: #fafafa;
@@ -761,61 +779,70 @@ button, .button, .btn {
   justify-content: center;
 }
 
-/* line 129, style.scss */
+/* line 137, style.scss */
 .image-details {
   background: #fafafa;
 }
 
-/* line 133, style.scss */
+/* line 141, style.scss */
 .photo-title {
   padding: 10px;
   text-align: center;
   font-family: "Pacifico", sans-serif;
 }
 
-/* line 139, style.scss */
+/* line 147, style.scss */
 .photo-username {
   margin: 0 10px 0 0;
   color: #a8aec2;
 }
-/* line 142, style.scss */
+/* line 150, style.scss */
 .photo-username:hover {
   color: #6c7698;
 }
 
-/* line 147, style.scss */
+/* line 155, style.scss */
 .photo-username-active {
   color: #d06949;
 }
-/* line 149, style.scss */
+/* line 157, style.scss */
 .photo-username-active:hover {
   color: #a3472a;
 }
 
-/* line 154, style.scss */
+/* line 162, style.scss */
 .delete-btn {
   font-size: 1.25rem;
   padding-top: 7px;
   cursor: pointer;
 }
-/* line 158, style.scss */
+/* line 166, style.scss */
 .delete-btn:hover {
   color: #6c7698;
 }
 
-/* line 163, style.scss */
+/* line 171, style.scss */
+.post-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+/* line 179, style.scss */
 .likes {
   color: #a8aec2;
   font-family: "Pacifico", sans-serif;
   margin: 0 0 0 5px;
   padding: 0;
 }
-/* line 168, style.scss */
+/* line 184, style.scss */
 .likes:hover {
   color: #6c7698;
 }
 
-/* line 173, style.scss */
+/* line 189, style.scss */
 .likes-heart {
   background: url("img/heart.png") center no-repeat;
   background-size: contain;
@@ -832,22 +859,22 @@ button, .button, .btn {
   transition: all 0.5s;
   transform: translateX(-50%) translateY(-50%) scale(3);
 }
-/* line 188, style.scss */
+/* line 204, style.scss */
 .likes-heart.like-enter {
   transition: all .2s;
   transform: translateX(-50%) translateY(-50%) scale(1);
   opacity: 1;
 }
-/* line 192, style.scss */
+/* line 208, style.scss */
 .likes-heart.like-enter.like-enter-active {
   transform: translateX(-50%) translateY(-50%) scale(3);
 }
-/* line 196, style.scss */
+/* line 212, style.scss */
 .likes-heart .like-leave-active {
   display: none;
 }
 
-/* line 201, style.scss */
+/* line 217, style.scss */
 .add-photo-container {
   width: 80%;
   margin: 0 auto;
@@ -855,7 +882,7 @@ button, .button, .btn {
   justify-content: space-between;
 }
 @media (max-width: 750px) {
-  /* line 201, style.scss */
+  /* line 217, style.scss */
   .add-photo-container {
     width: 90%;
     flex-direction: column;
@@ -863,74 +890,74 @@ button, .button, .btn {
   }
 }
 
-/* line 213, style.scss */
+/* line 229, style.scss */
 .add-photo-form {
   width: 60%;
 }
 @media (max-width: 750px) {
-  /* line 213, style.scss */
+  /* line 229, style.scss */
   .add-photo-form {
     width: 100%;
   }
 }
 @media (max-width: 350px) {
-  /* line 218, style.scss */
+  /* line 234, style.scss */
   .add-photo-form input {
     width: 90%;
   }
 }
 
-/* line 225, style.scss */
+/* line 241, style.scss */
 .preview-container {
   width: 40%;
   margin: 0 auto;
 }
 @media (max-width: 750px) {
-  /* line 225, style.scss */
+  /* line 241, style.scss */
   .preview-container {
     width: 100%;
   }
 }
-/* line 231, style.scss */
+/* line 247, style.scss */
 .preview-container h2 {
   text-align: center;
 }
 @media (max-width: 750px) {
-  /* line 231, style.scss */
+  /* line 247, style.scss */
   .preview-container h2 {
     text-align: left;
   }
 }
-/* line 237, style.scss */
+/* line 253, style.scss */
 .preview-container .grid-item {
   margin: 0 auto;
 }
 @media (max-width: 750px) {
-  /* line 237, style.scss */
+  /* line 253, style.scss */
   .preview-container .grid-item {
     margin: 0;
   }
 }
 
-/* line 245, style.scss */
+/* line 261, style.scss */
 .submit-btn-container {
   position: relative;
   width: 80%;
   margin: 0px auto 30px;
 }
 @media (max-width: 750px) {
-  /* line 245, style.scss */
+  /* line 261, style.scss */
   .submit-btn-container {
     width: 90%;
   }
 }
 
-/* line 254, style.scss */
+/* line 270, style.scss */
 .btn-submit {
   position: absolute;
 }
 @media (max-width: 750px) {
-  /* line 254, style.scss */
+  /* line 270, style.scss */
   .btn-submit {
     top: 20px;
     margin-bottom: 20px;
@@ -938,13 +965,13 @@ button, .button, .btn {
 }
 
 /*Profile Button*/
-/* line 264, style.scss */
+/* line 280, style.scss */
 .profile-container {
   width: 80%;
   margin: 0 auto;
 }
 
-/* line 269, style.scss */
+/* line 285, style.scss */
 .profile-page-btn {
   display: block;
   margin: 20px;
@@ -953,24 +980,24 @@ button, .button, .btn {
   background: #393939;
   color: #fafafa;
 }
-/* line 276, style.scss */
+/* line 292, style.scss */
 .profile-page-btn:hover {
   border: 2px solid #393939;
 }
 
-/* line 281, style.scss */
+/* line 297, style.scss */
 .logout-btn {
   background: #d06949;
   margin: 20px;
   font-size: 1.5rem;
   padding: 10px;
 }
-/* line 286, style.scss */
+/* line 302, style.scss */
 .logout-btn:hover {
   border: 2px solid #d06949;
 }
 
-/* line 291, style.scss */
+/* line 307, style.scss */
 .notfound {
   width: 80%;
   margin: 50px auto;

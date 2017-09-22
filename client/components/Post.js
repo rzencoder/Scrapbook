@@ -39,33 +39,34 @@ class Post extends Component {
     const { post } = this.props;
     const userMatch = this.props.user.username === post.username;
     //Rotate Posts - Needs fixing on initial load
-    const sign = Math.random() > 0.5 ? '' : '-';
-    const style = {transform: `rotate(${sign}${Math.random() * 2}deg)`}
+    const sign = this.props.random > 0.5 ? '' : '-';
+    const style = {transform: `rotate(${sign}${this.props.random * 2}deg)`}
 
     return (
-      <figure className="grid-item" style={style}>
-        <div className="grid-image">
-          <img src={post.imageUrl} alt={post.title} />
-          <CSSTransitionGroup
-            transitionName="like"
-            transitionAppear={true}
-            transitionAppearTimeout={0}
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}>
-            <span key={post.likes} className="likes-heart">{post.likes}</span>
-          </CSSTransitionGroup>
-        </div>
-
-        <figcaption className="image-details">
-          <p className="photo-title">{post.title}</p>
-          <div>
-            <button  onClick={this.addLike} className="likes">&hearts; {post.likes}</button>
-            {this.props.user.isAuthenticated &&
-              userMatch ? <div className="delete-btn" onClick={this.removePost}><i className="fa fa-trash"></i></div> : ''}
-            <Link className={`photo-username ${userMatch ? 'photo-username-active' : ''}`} to={`/posts/${post.username}`}>{post.username}</Link>
+      <figure className="grid-figure">
+        <div className="grid-item" style={style} >
+          <div className="grid-image">
+            <img src={post.imageUrl} alt={post.title} />
+            <CSSTransitionGroup
+              transitionName="like"
+              transitionAppear={true}
+              transitionAppearTimeout={0}
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={500}>
+              <span key={post.likes} className="likes-heart">{post.likes}</span>
+            </CSSTransitionGroup>
           </div>
-        </figcaption>
 
+          <figcaption className="image-details">
+            <p className="photo-title">{post.title}</p>
+            <div className ="post-details">
+              <button  onClick={this.addLike} className="likes">&hearts; {post.likes}</button>
+              {this.props.user.isAuthenticated &&
+                userMatch ? <div className="delete-btn" onClick={this.removePost}><i className="fa fa-trash"></i></div> : ''}
+              <Link className={`photo-username ${userMatch ? 'photo-username-active' : ''}`} to={`/posts/${post.username}`}>{post.username}</Link>
+            </div>
+          </figcaption>
+        </div>
       </figure>
     )
   }

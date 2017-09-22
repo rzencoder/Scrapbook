@@ -12,7 +12,7 @@
   padding: 10px;
   @media (max-width: 500px){
     font-size: 2rem;
-    padding: 10px 10px 12px;
+    padding: 15px 10px;
     text-align: left;
   }
   @media (max-width: 330px){
@@ -49,7 +49,7 @@
   padding: 6px;
   font-weight: 700;
   font-family: Helvetica;
-  top: 32px;
+  top: 34px;
   right: 10px;
   color: $white;
   background: #00aced;
@@ -59,8 +59,11 @@
   @media (max-width: 500px){
     padding: 2px 4px;
     font-size: 0.9rem;
-    top: 25px;
+    top: 30px;
     right: 5px;
+  }
+    @media (max-width: 340px){
+    top: 27px;
   }
 }
 
@@ -73,6 +76,7 @@
   top: 30px;
   right: 10px;
   border: none;
+  
   @media (max-width: 500px){
     top: 25px;
     right: 10px;

@@ -50,10 +50,12 @@ class AddPost extends Component {
   onSubmitPost (e) {
     const title = this.state.newTitle;
     const imageUrl = this.state.newImage;
-    const username = this.props.user.username
-    this.props.addPost({"username": username,
-                         "title": title,
-                         "imageUrl": imageUrl});
+    const username = this.props.user.username;
+    if(imageUrl && username){
+        this.props.addPost({"username": username,
+                            "title": title,
+                            "imageUrl": imageUrl});
+    }
   }
 
   render () {
@@ -81,7 +83,7 @@ class AddPost extends Component {
               </div>
               <figcaption className="image-details">
                 <p className="photo-title">{this.state.newTitle}</p>
-                <div>
+                <div className="post-details">
                   <button  className="likes">&hearts; 0</button>
                   <div className="photo-username">{this.props.user.username}</div>
                 </div>

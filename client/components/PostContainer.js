@@ -23,7 +23,7 @@ function mapDispatchToProps(dispatch) {
 class PostContainer extends Component {
 
   componentWillMount () {
-    this.props.loadImages()
+    this.props.loadImages();
   }
 
   render () {
@@ -37,7 +37,7 @@ class PostContainer extends Component {
               disableImagesLoaded={false}
               updateOnEachImageLoad={false}
         >
-          {this.props.posts.map((post, i) => <Post {...this.props} key={i} i={i} post={post} />)}
+          {this.props.posts.map((post, i) => <Post {...this.props} key={i} i={i} post={post} random={Math.random()}/>)}
         </Masonry>
       </div>
     )

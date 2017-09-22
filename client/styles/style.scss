@@ -107,10 +107,18 @@ button, .button, .btn{
   margin: 20px auto;
 }
 
+.grid-figure {
+  width: 300px;
+  margin: 0 0 30px;
+  @media (max-width: 330px){
+    width: 270px;
+    margin: 0 auto 30px;
+  }
+}
+
 .grid-item {
   width: 300px;
   background: $white;
-  margin: 0 0 30px;
   @media (max-width: 330px){
     width: 270px;
     margin: 0 auto 30px;
@@ -158,6 +166,14 @@ button, .button, .btn{
   &:hover {
     color: darken($grey, 20%)
   }
+}
+
+.post-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 5px;
 }
 
 .likes {
