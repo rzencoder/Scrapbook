@@ -12,9 +12,11 @@ class Main extends Component {
     const isAuthenticated = this.props.user.isAuthenticated;
     return (
       <div>
-        <h1 className="title">
-          <Link to="/">Scrapbook</Link>
-          <i className="fa fa-github github logo" aria-hidden="true"></i>
+        <h1 className="title">    
+          <a className="github logo" href="https://github.com/rzencoder/Scrapbook">
+            <i className="fa fa-github " aria-hidden="true"></i>
+          </a>
+          <Link className="heading" to="/">Scrapbook</Link>
           {!isAuthenticated ?
             <a href="/auth/twitter" className="logo twitter"><i className="fa fa-twitter" aria-hidden="true"></i> {`  Sign in`}</a>
             :

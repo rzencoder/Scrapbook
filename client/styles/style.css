@@ -37,6 +37,11 @@
 }
 
 /* line 31, partials/_navbar.scss */
+.heading {
+  color: #d06949;
+}
+
+/* line 35, partials/_navbar.scss */
 .title-border {
   position: absolute;
   bottom: 0;
@@ -46,31 +51,31 @@
   height: 1rem;
 }
 
-/* line 40, partials/_navbar.scss */
+/* line 44, partials/_navbar.scss */
 .logo {
   position: absolute;
   cursor: pointer;
 }
 
-/* line 45, partials/_navbar.scss */
+/* line 49, partials/_navbar.scss */
 .logo.twitter {
   position: absolute;
+  top: 35px;
+  right: 10px;
   font-size: 1rem;
   border-radius: 5px;
   padding: 6px;
   font-weight: 700;
   font-family: Helvetica;
-  top: 34px;
-  right: 10px;
   color: #fafafa;
   background: #00aced;
 }
-/* line 56, partials/_navbar.scss */
+/* line 60, partials/_navbar.scss */
 .logo.twitter:hover {
   background: #0087ba;
 }
 @media (max-width: 500px) {
-  /* line 45, partials/_navbar.scss */
+  /* line 49, partials/_navbar.scss */
   .logo.twitter {
     padding: 2px 4px;
     font-size: 0.9rem;
@@ -79,13 +84,13 @@
   }
 }
 @media (max-width: 340px) {
-  /* line 45, partials/_navbar.scss */
+  /* line 49, partials/_navbar.scss */
   .logo.twitter {
     top: 27px;
   }
 }
 
-/* line 70, partials/_navbar.scss */
+/* line 74, partials/_navbar.scss */
 .twitter.logo.profile-btn {
   position: absolute;
   background: #fafafa;
@@ -97,7 +102,7 @@
   border: none;
 }
 @media (max-width: 500px) {
-  /* line 70, partials/_navbar.scss */
+  /* line 74, partials/_navbar.scss */
   .twitter.logo.profile-btn {
     top: 25px;
     right: 10px;
@@ -106,38 +111,40 @@
   }
 }
 @media (max-width: 340px) {
-  /* line 70, partials/_navbar.scss */
+  /* line 74, partials/_navbar.scss */
   .twitter.logo.profile-btn {
     top: 21px;
   }
 }
-/* line 89, partials/_navbar.scss */
+/* line 93, partials/_navbar.scss */
 .twitter.logo.profile-btn button {
   border: none;
 }
 
-/* line 94, partials/_navbar.scss */
+/* line 98, partials/_navbar.scss */
 .profile-btn {
   color: #393939;
 }
-/* line 96, partials/_navbar.scss */
+/* line 100, partials/_navbar.scss */
 .profile-btn:hover {
   color: #5f5f5f;
 }
 
-/* line 101, partials/_navbar.scss */
-.github {
-  top: 32px;
+/* line 105, partials/_navbar.scss */
+.logo.github {
+  position: absolute;
+  color: #393939;
+  top: 17px;
   left: 15px;
   font-size: 2.4rem;
 }
-/* line 105, partials/_navbar.scss */
-.github:hover {
+/* line 111, partials/_navbar.scss */
+.logo.github:hover {
   color: #5f5f5f;
 }
 @media (max-width: 500px) {
-  /* line 101, partials/_navbar.scss */
-  .github {
+  /* line 105, partials/_navbar.scss */
+  .logo.github {
     display: none;
   }
 }

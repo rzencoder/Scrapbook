@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "pinterest style website for free code camp",
   "scripts": {
-    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build:webpack": "webpack --config webpack.config.prod.js",
     "build": "npm run build:webpack",
     "start": "node server.js"
   },
@@ -33,7 +33,6 @@
     "mongoose": "^4.11.0",
     "morgan": "^1.8.2",
     "passport": "^0.3.2",
-    "passport-github2": "^0.1.10",
     "passport-twitter": "^1.0.4",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",

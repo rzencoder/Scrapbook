@@ -28,6 +28,10 @@
   }
 }
 
+.heading {
+    color: $heading-color;
+}
+
 .title-border {
   position: absolute;
   bottom: 0;
@@ -43,14 +47,14 @@
 }
 
 .logo.twitter {
-  position: absolute;
+    position: absolute;
+    top: 35px;
+    right: 10px;
   font-size: 1rem;
   border-radius: 5px;
   padding: 6px;
   font-weight: 700;
   font-family: Helvetica;
-  top: 34px;
-  right: 10px;
   color: $white;
   background: #00aced;
   &:hover {
@@ -98,8 +102,10 @@
   }
 }
 
-.github {
-  top: 32px;
+.logo.github {
+    position: absolute;
+    color: $base-font-color;
+  top: 17px;
   left: 15px;
   font-size: 2.4rem;
   &:hover {
