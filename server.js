@@ -61,12 +61,7 @@ app.use(apiRoutes);
 
 // app.use(require("webpack-hot-middleware")(compiler));
 
-app.use(express.static(path.join(__dirname, "client/build"))); // Anything that doesn't match the above, send back index.html
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
-});
-
-app.listen(process.env.PORT, "localhost", function (err) {
+app.listen(process.env.PORT || 3001, function (err) {
   if (err) {
     console.log(err);
     return;
