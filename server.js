@@ -16,7 +16,7 @@ const cors = require("cors");
 
 const app = express();
 // const compiler = webpack(config);
-// app.use(cors);
+app.use(cors);
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, function (
   err
 ) {

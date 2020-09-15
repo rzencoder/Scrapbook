@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router";
 import { connect } from "react-redux";
 
-const path = "https://scrapbook-uk.herokuapp.com/";
+const path = "https://scrapbook-uk.herokuapp.com";
 
 function mapStateToProps(state) {
   return { user: state.user };
