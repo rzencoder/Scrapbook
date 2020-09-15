@@ -23,7 +23,7 @@ class Main extends Component {
           <Link className="heading" to="/">
             Scrapbook
           </Link>
-          {!isAuthenticated ? (
+          {/* {!isAuthenticated ? (
             <a href={`${path}/auth/github`} className="logo twitter">
               <i className="fa fa-github" aria-hidden="true"></i> {`  Sign in`}
             </a>
@@ -31,7 +31,7 @@ class Main extends Component {
             <Link className="logo twitter profile-btn" to="/profile">
               <button className="profile-btn">Profile</button>
             </Link>
-          )}
+          )} */}
           <div className="title-border"></div>
         </h1>
         {this.props.children}
