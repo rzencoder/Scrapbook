@@ -9,9 +9,9 @@ require("dotenv").config();
 const expressSession = require("express-session");
 const passport = require("passport");
 const mongoose = require("mongoose");
-const User = require("./server/models/users");
-const apiRoutes = require("./server/routes/api");
-const authRoutes = require("./server/routes/auth");
+const User = require("./models/users");
+const apiRoutes = require("./routes/api");
+const authRoutes = require("./routes/auth");
 const cors = require("cors");
 
 const app = express();
@@ -60,6 +60,11 @@ app.use(apiRoutes);
 // );
 
 // app.use(require("webpack-hot-middleware")(compiler));
+
+app.use(express.static(path.join(__dirname, "client/build"))); // Anything that doesn't match the above, send back index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 
 app.listen(process.env.PORT || 3001, function (err) {
   if (err) {
