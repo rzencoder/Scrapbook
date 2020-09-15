@@ -56,7 +56,7 @@ app.get(
     failureRedirect: "/",
   }),
   (req, res) => {
-    res.redirect("http://localhost:3000/profile");
+    res.redirect("/profile");
   }
 );
 

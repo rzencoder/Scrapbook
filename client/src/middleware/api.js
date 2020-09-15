@@ -1,4 +1,4 @@
-const BASE_URL = "http://127.0.0.1:3000";
+const BASE_URL = "https://scrapbook-uk.herokuapp.com/";
 
 function callApi(endpoint, authenticated) {
   console.log("here");
