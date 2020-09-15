@@ -1,64 +1,78 @@
 //requirements
-require('dotenv').load();
-const express = require('express');
-const passport = require('passport');
-const TwitterStrategy = require('passport-twitter');
-const User = require('../models/users');
+const express = require("express");
+const passport = require("passport");
+const GithubStrategy = require("passport-github");
+const User = require("../models/users");
+require("dotenv").config();
 
-const app = module.exports = express.Router();
+const app = (module.exports = express.Router());
 
-passport.use(new TwitterStrategy({
-    consumerKey: process.env.TWITTER_CONSUMER_KEY,
-    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-    callbackURL: process.env.CALLBACK_URL
-  },
-  (accessToken, refreshToken, profile, done) => {
-    process.nextTick(() => {
-      User.findOne({
-        'username': profile.username
-      }, (err, user) => {
-        if (err) {
-          return done(err);
-        }
-        if (user) {
-          return done(null, user);
-        } else {
-          var newUser = new User();
-          newUser.username = profile.username;
-          newUser.save(err => {
+passport.use(
+  new GithubStrategy(
+    {
+      clientID: process.env.GITHUB_CONSUMER_KEY,
+      clientSecret: process.env.GITHUB_CONSUMER_SECRET,
+      callbackURL: process.env.CALLBACK_URL,
+    },
+    (accessToken, refreshToken, profile, done) => {
+      console.log("profile");
+      console.log(profile);
+      process.nextTick(() => {
+        User.findOne(
+          {
+            username: profile.username,
+          },
+          (err, user) => {
             if (err) {
-              throw err;
+              return done(err);
             }
-            return done(null, newUser);
-          });
-        }
+            if (user) {
+              return done(null, user);
+            } else {
+              var newUser = new User();
+              newUser.username = profile.username;
+              newUser.save((err) => {
+                if (err) {
+                  console.log("error");
+                  throw err;
+                }
+                console.log("newUser");
+                console.log(newUser);
+                return done(null, newUser);
+              });
+            }
+          }
+        );
       });
-    });
+    }
+  )
+);
+
+app.get("/auth/github", passport.authenticate("github"));
+
+app.get(
+  "/auth/github/callback/",
+  passport.authenticate("github", {
+    failureRedirect: "/",
+  }),
+  (req, res) => {
+    res.redirect("http://localhost:3000/profile");
   }
-));
+);
 
-app.get('/auth/twitter', passport.authenticate('twitter'));
-
-app.get('/auth/twitter/callback/',
-  passport.authenticate('twitter', {
-    failureRedirect: '/'
-  }), (req, res) => {
-    res.redirect('/profile');
-  });
-
-app.post('/auth/verify', (req, res) => {
+app.post("/auth/verify", (req, res) => {
   if (req.isAuthenticated()) {
     res.status(201).send({
-      username: req.user.username
+      username: req.user.username,
     });
   } else {
     res.status(403).send({
-      error: "Not Authorized"
-    })
+      error: "Not Authorized",
+    });
   }
 });
 
-app.get('/logout', (req, res) => {
+app.get("/logout", (req, res) => {
   req.logout();
-  res.redirect('/');
+  res.redirect("/");
 });

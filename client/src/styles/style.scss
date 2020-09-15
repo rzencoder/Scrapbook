@@ -1,0 +1,314 @@
+@import "partials/_navbar";
+@import "partials/_normalize";
+
+/*General Styles*/
+
+html {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+body {
+  background: $bg-color;
+  font-family: $base-font;
+  color: $base-font-color;
+  margin: 0;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+input {
+  border: none;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+
+/* Buttons */
+
+.control-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $grey;
+}
+
+button,
+.button,
+.btn {
+  font-family: $base-font;
+  border: 2px solid lighten(#bbb, 90%);
+  background: none;
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: $white;
+  transition: all 0.2s;
+  box-sizing: padding-box;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-add {
+  background: $base-font-color;
+  margin-left: 10px;
+  padding: 6px;
+  &:hover,
+  &:focus {
+    border-color: $base-font-color;
+    outline: 0;
+  }
+  @media (max-width: 750px) {
+    margin: 10px 0 0 0;
+  }
+}
+
+.btn-submit {
+  background: $heading-color;
+  font-size: 1.4rem;
+  padding: 7px;
+  &:hover,
+  &:focus {
+    border-color: $heading-color;
+    outline: 0;
+  }
+}
+
+/*Photos and Photo Grid*/
+
+.user-posts-title {
+  text-align: center;
+  @media (max-width: 500px) {
+    font-size: 1.5rem;
+    margin: 10px;
+  }
+}
+
+.grid-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.grid {
+  position: relative;
+  margin: 20px auto;
+}
+
+.grid-figure {
+  width: 300px;
+  margin: 0 0 30px;
+  @media (max-width: 330px) {
+    width: 270px;
+    margin: 0 auto 30px;
+  }
+}
+
+.grid-item {
+  width: 300px;
+  background: $white;
+  @media (max-width: 330px) {
+    width: 270px;
+    margin: 0 auto 30px;
+  }
+}
+
+.grid-image {
+  width: 90%;
+  background: $white;
+  margin: 0 auto;
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-details {
+  background: $white;
+}
+
+.photo-title {
+  padding: 10px;
+  text-align: center;
+  font-family: $heading-font;
+}
+
+.photo-username {
+  margin: 0 10px 0 0;
+  color: $grey;
+  &:hover {
+    color: darken($grey, 20%);
+  }
+}
+
+.photo-username-active {
+  color: $heading-color;
+  &:hover {
+    color: darken($heading-color, 15%);
+  }
+}
+
+.delete-btn {
+  font-size: 1.25rem;
+  padding-top: 7px;
+  cursor: pointer;
+  &:hover {
+    color: darken($grey, 20%);
+  }
+}
+
+.post-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.likes {
+  color: $grey;
+  font-family: $heading-font;
+  margin: 0 0 0 5px;
+  padding: 0;
+  &:hover {
+    color: darken($grey, 20%);
+  }
+}
+
+.likes-heart {
+  background: url("img/heart.png") center no-repeat;
+  background-size: contain;
+  font-family: $heading-font;
+  display: block;
+  font-size: 2rem;
+  padding: 1rem;
+  position: absolute;
+  color: $white;
+  left: 50%;
+  top: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.5s;
+  transform: translateX(-50%) translateY(-50%) scale(3);
+  &.like-enter {
+    transition: all 0.2s;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+    opacity: 1;
+    &.like-enter-active {
+      transform: translateX(-50%) translateY(-50%) scale(3);
+    }
+  }
+  .like-leave-active {
+    display: none;
+  }
+}
+
+.add-photo-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 750px) {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.add-photo-form {
+  width: 60%;
+  @media (max-width: 750px) {
+    width: 100%;
+  }
+  input {
+    @media (max-width: 350px) {
+      width: 90%;
+    }
+  }
+}
+
+.preview-container {
+  width: 40%;
+  margin: 0 auto;
+  @media (max-width: 750px) {
+    width: 100%;
+  }
+  h2 {
+    text-align: center;
+    @media (max-width: 750px) {
+      text-align: left;
+    }
+  }
+  .grid-item {
+    margin: 0 auto;
+    @media (max-width: 750px) {
+      margin: 0;
+    }
+  }
+}
+
+.submit-btn-container {
+  position: relative;
+  width: 80%;
+  margin: 0px auto 30px;
+  @media (max-width: 750px) {
+    width: 90%;
+  }
+}
+
+.btn-submit {
+  position: absolute;
+  @media (max-width: 750px) {
+    top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/*Profile Button*/
+
+.profile-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.profile-page-btn {
+  display: block;
+  margin: 20px;
+  font-size: 1.5rem;
+  padding: 10px;
+  background: $base-font-color;
+  color: $white;
+  &:hover {
+    border: 2px solid $base-font-color;
+  }
+}
+
+.logout-btn {
+  background: $heading-color;
+  margin: 20px;
+  font-size: 1.5rem;
+  padding: 10px;
+  &:hover {
+    border: 2px solid $heading-color;
+  }
+}
+
+.notfound {
+  width: 80%;
+  margin: 50px auto;
+  font-family: sans-serif;
+}
